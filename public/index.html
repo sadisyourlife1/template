@@ -2,36 +2,184 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <!-- <script src="script.js" defer></script> -->
+    <title>Music | Last.fm</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <div id="root">
+      <div class="app">
+        <!-- Header -->
+        <nav class="header">
+          <div class="header-logo">
+            <a href="./index.html" class="header-logo-link">Last.fm</a>
+          </div>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+          <div class="header-wrap">
+            <a class="header-search" href="./search.html"></a>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+            <!-- Navigation -->
+            <div class="header-nav">
+              <ul class="header-nav-list">
+                <li class="header-nav-item">
+                  <a class="header-nav-link">Live</a>
+                </li>
+                <li class="header-nav-item">
+                  <a class="header-nav-link">Music</a>
+                </li>
+                <li class="header-nav-item">
+                  <a class="header-nav-link">Charts</a>
+                </li>
+                <li class="header-nav-item">
+                  <a class="header-nav-link">Events</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Avatar -->
+            <a class="header-avatar">
+              <img class="header-avatar-img" src="images/image.png" loading="eager" fetchpriority="high" />
+            </a>
+          </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="content">
+          <!-- Page Title -->
+          <div class="content-top">
+            <h1 class="content-top-header">Music</h1>
+          </div>
+
+          <!-- Hot Right Now Section -->
+          <section class="hot-right-now">
+            <h2 class="hot-right-now-title">Hot right now</h2>
+            <div class="hot-right-now-underline"></div>
+            <div class="hot-right-now-grid">
+              <!-- Пример одного элемента -->
+              <div class="hot-right-now-item">
+                <a class="hot-right-now-media">
+                  <img class="hot-right-now-thumb" src="images/image.png" alt="Artist name" loading="eager" />
+                  <p class="hot-right-now-name">Artist name</p>
+                </a>
+                <p class="hot-right-now-tags">
+                  <a class="hot-right-now-tag">tag1</a>
+                  <a class="hot-right-now-tag">tag2</a>
+                  <a class="hot-right-now-tag">tag3</a>
+                </p>
+              </div>
+              <!-- Можно клонировать этот блок нужное количество раз -->
+            </div>
+          </section>
+
+          <!-- Popular Tracks Section -->
+          <section class="popular-tracks">
+            <h2 class="popular-tracks-title">Popular tracks</h2>
+            <div class="popular-tracks-underline"></div>
+            <div class="popular-tracks-columns">
+              <!-- Колонка треков -->
+              <div class="popular-tracks-col">
+                <div class="popular-tracks-item">
+                  <a class="popular-tracks-media">
+                    <img class="popular-tracks-thumb" src="images/image.png" alt="Track name" loading="eager" />
+                  </a>
+                  <div class="popular-tracks-info">
+                    <a class="popular-tracks-track">Track name</a>
+                    <a class="popular-tracks-artist">Artist name</a>
+                    <p class="popular-tracks-tags">
+                      <a class="popular-tracks-tag">tag1</a>
+                      <a class="popular-tracks-tag">tag2</a>
+                      <a class="popular-tracks-tag">tag3</a>
+                    </p>
+                  </div>
+                </div>
+                <!-- Другие треки можно добавить копированием -->
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+          <div class="footer-container">
+            <div class="footer-top">
+              <div class="footer-section">
+                <h4 class="footer-title">Company</h4>
+                <ul class="footer-list">
+                  <li class="footer-item">About Last.fm</li>
+                  <li class="footer-item">Contact Us</li>
+                  <li class="footer-item">Jobs</li>
+                  <li class="footer-item">Features</li>
+                </ul>
+              </div>
+
+              <div class="footer-section">
+                <h4 class="footer-title">Help</h4>
+                <ul class="footer-list">
+                  <li class="footer-item">Track My Music</li>
+                  <li class="footer-item">Community Support</li>
+                  <li class="footer-item">Community Guidelines</li>
+                  <li class="footer-item">Help</li>
+                </ul>
+              </div>
+
+              <div class="footer-section">
+                <h4 class="footer-title">Goodies</h4>
+                <ul class="footer-list">
+                  <li class="footer-item">Download Scrobbler</li>
+                  <li class="footer-item">Developer API</li>
+                  <li class="footer-item">Free Music Downloads</li>
+                  <li class="footer-item">Merchandise</li>
+                </ul>
+              </div>
+
+              <div class="footer-section">
+                <h4 class="footer-title">Account</h4>
+                <ul class="footer-list">
+                  <li class="footer-item">Inbox</li>
+                  <li class="footer-item">Settings</li>
+                  <li class="footer-item">Last.fm Pro</li>
+                  <li class="footer-item">Logout</li>
+                </ul>
+              </div>
+
+              <div class="footer-section">
+                <h4 class="footer-title">Follow Us</h4>
+                <ul class="footer-list">
+                  <li class="footer-item">Facebook</li>
+                  <li class="footer-item">Bluesky</li>
+                  <li class="footer-item">Instagram</li>
+                  <li class="footer-item">YouTube</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="footer-bottom">
+              <div class="footer-info">
+                <div class="footer-languages">
+                  <a class="footer-language footer__language--active">English</a>
+                  <a class="footer-language">Deutsch</a>
+                  <a class="footer-language">Español</a>
+                  <a class="footer-language">Français</a>
+                  <a class="footer-language">Italiano</a>
+                  <a class="footer-language">日本語</a>
+                  <a class="footer-language">Polski</a>
+                  <a class="footer-language">Português</a>
+                  <a class="footer-language">Русский</a>
+                  <a class="footer-language">Svenska</a>
+                  <a class="footer-language">Türkçe</a>
+                  <a class="footer-language">简体中文</a>
+                </div>
+                <div class="footer-timezone">Time zone: Europe/Moscow</div>
+                <div class="footer-legal">
+                  CBS Interactive © 2025 Last.fm Ltd. All rights reserved · Terms of Use · Privacy Policy · Legal Policies · California Notice · Your Privacy Choices · Jobs at Paramount · Last.fm Music
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
   </body>
 </html>
