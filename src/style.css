@@ -1,0 +1,629 @@
+/* --- Base Reset & Typography --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  width: 100%;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding-top: 68px;
+}
+
+/* --- CSS Variables --- */
+:root {
+  --font-primary: Barlow, "Open Sans", "Lucida Grande", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --color-bg: #fff;
+  --color-text: #222222;
+  --color-accent: #e60023;
+}
+
+/* --- Header Styles --- */
+.header {
+  width: 100%;
+  height: 64px;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.header-logo-link {
+  width: 120px;
+  height: 20px;
+  display: block;
+  background: url('../public/images/logo.png') no-repeat left center / contain;
+  color: transparent;
+}
+
+.header-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.header-nav-item {
+  margin-left: 32px;
+}
+
+.header-nav-link {
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  text-align: left;
+}
+
+.header-search {
+  font-size: 20px;
+  color: #fff;
+  min-width: 16px;
+  min-height: 16px;
+  text-decoration: none;
+  background: url('../public/images/search.png') no-repeat right center / contain;
+}
+
+.header-avatar {
+  height: 36px;
+  margin-left: 36px;
+}
+
+.header-avatar-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+/* --- Content Layout --- */
+.content {
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 60px;
+}
+
+.content-top {
+  background: var(--color-bg);
+  padding: 0 20px;
+}
+
+.content-top-header {
+  margin-top: 48px;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* --- Trending Artists --- */
+.hot-right-now {
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.hot-right-now-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.hot-right-now-underline {
+  width: 60px;
+  height: 2px;
+  background: var(--color-accent);
+  margin: 20px auto 32px;
+}
+
+.hot-right-now-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  min-height: 180px;
+}
+
+.hot-right-now-item {
+  text-align: center;
+}
+
+.hot-right-now-media {
+  text-decoration: none;
+}
+
+.hot-right-now-thumb {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #f0f0f0;
+  margin: 0 auto 12px;
+}
+
+.hot-right-now-name {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #222222;
+  text-decoration: none;
+}
+
+.hot-right-now-tags {
+  font-size: 11px;
+  color: #888;
+}
+
+.hot-right-now-tag {
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+  position: relative;
+  margin-right: 9px;
+}
+
+.hot-right-now-tag:not(:last-child)::after {
+  content: " · ";
+  position: absolute;
+  right: -6px;
+  top: 0;
+}
+
+.hot-right-now-thumb:hover {
+  filter: brightness(0.95);
+}
+
+.hot-right-now-media:hover .hot-right-now-thumb,
+.hot-right-now-item:hover .hot-right-now-name {
+  text-decoration: underline;
+}
+
+/* --- Popular Tracks --- */
+.popular-tracks {
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.popular-tracks-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.popular-tracks-underline {
+  width: 60px;
+  height: 2px;
+  background: var(--color-accent);
+  margin: 20px auto 32px;
+}
+
+.popular-tracks-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.popular-tracks-item {
+  width: 100%;
+  min-height: 66px;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.popular-tracks-thumb {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #f0f0f0;
+  object-fit: cover;
+}
+
+.popular-tracks-info {
+  margin-left: 16px;
+  line-height: 1.2;
+  flex-grow: 1;
+}
+
+.popular-tracks-track,
+.popular-tracks-artist {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.popular-tracks-track {
+  font-weight: bold;
+  color: #222222;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.popular-tracks-artist {
+  font-size: 13px;
+  color: #222222;
+}
+
+.popular-tracks-tags {
+  font-size: 11px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.popular-tracks-tag {
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+  position: relative;
+  margin-right: 9px;
+}
+
+.popular-tracks-tag:hover {
+  text-decoration: underline;
+}
+
+.popular-tracks-item:hover .popular-tracks-thumb {
+  filter: brightness(0.95);
+}
+
+.popular-tracks-item:hover .popular-tracks-track {
+  text-decoration: underline;
+}
+
+/* --- Search Results --- */
+.search-results,
+.artists,
+.albums,
+.tracks {
+  max-width: 800px;
+  margin: 40px auto;
+  color: #222;
+}
+
+.search-results-title {
+  visibility: hidden;
+}
+
+.search-results-title.is-visible {
+  visibility: visible;
+}
+
+.search-results-body {
+  min-height: 600px;
+  visibility: hidden;
+}
+
+.search-results-body.is-visible {
+  visibility: visible;
+}
+
+.search-results-title,
+.artists-title,
+.albums-title,
+.tracks-title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  line-height: 30px;
+}
+
+.search-results-title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+/* --- Artists & Albums Grids --- */
+.artists-grid,
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.artists-item,
+.albums-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+}
+
+.artists-item:hover,
+.albums-item:hover {
+  filter: brightness(0.95);
+}
+
+.artists-info,
+.albums-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+}
+
+.artists-name,
+.albums-name {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.artists-listeners,
+.albums-artist {
+  margin: 4px 0 0;
+  font-size: 12px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.artists-item:hover .artists-name,
+.albums-item:hover .albums-name {
+  text-decoration: underline;
+}
+
+/* --- Track List --- */
+.tracks-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tracks-item {
+  display: grid;
+  grid-template-columns: 60px 40px 350px 250px 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.tracks-play-btn {
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+  padding: 0;
+  border: 1px solid #d6d6d6;
+  border-radius: 50%;
+  background: url('../public/images/play.png') no-repeat center / 50% auto;
+  cursor: pointer;
+}
+
+.tracks-play-btn:hover {
+  filter: brightness(1.1);
+}
+
+.tracks-image {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+}
+
+.tracks-name,
+.tracks-artist {
+  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tracks-name {
+  font-weight: 700;
+  color: #000;
+}
+
+.tracks-artist {
+  color: #222;
+  font-weight: 500;
+}
+
+.tracks-name:hover,
+.tracks-artist:hover {
+  text-decoration: underline;
+}
+
+.tracks-duration {
+  font-size: 14px;
+  color: #999;
+  text-align: right;
+  white-space: nowrap;
+  padding-right: 20px;
+}
+
+/* --- Tabs & Search Form --- */
+.search-results-tabs-list {
+  display: flex;
+  list-style: none;
+  border-bottom: 1px solid #e0e0e0;
+  margin: 0 0 32px;
+}
+
+.search-results-tab {
+  margin-right: 32px;
+}
+
+.search-results-tab-link {
+  font-size: 16px;
+  color: #666;
+  text-decoration: none;
+  padding-bottom: 8px;
+  display: inline-block;
+}
+
+.search-results-tab--active .search-results-tab-link {
+  color: #000;
+  font-weight: bold;
+  border-bottom: 2px solid #ff4c3b;
+}
+
+.search-results-form {
+  position: relative;
+  margin-bottom: 48px;
+}
+
+.search-results-form-inner {
+  display: flex;
+  align-items: center;
+}
+
+.search-results-input {
+  flex: 1;
+  font-size: 14px;
+  padding: 12px 48px 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-results-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.search-results-btn--clear {
+  right: 48px;
+  color: #999;
+}
+
+.search-results-btn--clear:hover {
+  color: #666;
+}
+
+.search-results-btn--submit {
+  right: 16px;
+  color: #333;
+  width: 20px;
+  height: 20px;
+  background: url('../public/images/search2.png') no-repeat center / 75% auto;
+}
+
+.search-results-btn--submit:hover {
+  color: #000;
+}
+
+/* --- Footer --- */
+.footer {
+  background-color: #111;
+  padding: 40px 0 20px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.footer-container {
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 120px;
+  margin: 0 10px;
+}
+
+.footer-title {
+  font-size: 13px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 12px;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-item {
+  margin-bottom: 8px;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #555;
+}
+
+.footer-info {
+  flex: 1;
+}
+
+.footer-languages {
+  margin-bottom: 10px;
+}
+
+.footer-language {
+  margin-right: 8px;
+  font-size: 13px;
+  color: #888;
+  text-decoration: none;
+}
+
+.footer-language--active {
+  color: #e6e6e6;
+}
+
+.footer-timezone {
+  margin-bottom: 10px;
+}
+
+.footer-legal {
+  flex: 1;
+  color: #444;
+  margin-top: 10px;
+}
